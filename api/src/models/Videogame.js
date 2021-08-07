@@ -10,11 +10,11 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false
     },
-    created:{ //asi puedo filtrar por creados
-      type: DataTypes.BOOLEAN,
-      defaultValue: true,
-      allowNull: true 
-    },
+    // created:{ //asi puedo filtrar por creados
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: true,
+    //   allowNull: true 
+    // },
     name: {
       type: DataTypes.STRING,
       allowNull: false // El false, le impide que el campo este vacio
@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    fecha_lanzamiento: {
+    released_date: {
       type: DataTypes.DATE       //allowNull: true-->  viene por default
     },
     rating: {

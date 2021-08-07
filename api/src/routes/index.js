@@ -7,14 +7,28 @@ const {Videogame , Genre} = require('../db');
 
 const getApiGames= async ()=>{
     const infoApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`)
-    const infoApiOk= await infoApi.data.results.map(c => {
+    let gamesArray= await mapGames(infoApi.data.results)
+    let next = infoApi.data.next
+    while (gamesArray.length < 100) {
+        const temp= await axios.get(next)
+        const carga= await mapGames(temp.data.results)
+        gamesArray= [...gamesArray,...carga]
+        next= temp.data.next
+    }
+    console.log(gamesArray.length)
+    return gamesArray
+}
+
+const mapGames =(arreglo)=>{
+  const aux=  arreglo.map(c => {
         return {
+            id: c.id,
             name: c.name,
             img: c.background_image,
             genre: c.genres.map(g=> g.name)
         }
     })
-    return infoApiOk
+    return aux
 }
 
 const getDBgame= async()=>{
@@ -47,7 +61,7 @@ router.get('/videogames', async(req, res)=>{
     const games= await allGames()
 
         if(name){
-            const byName= await games.filter(n=> n.name.toLowerCase().includes(name.toLowerCase()))
+            let byName= await games.filter(n=> n.name.toLowerCase().includes(name.toLowerCase()))
             byName.length ? 
             res.status(200).send(byName) 
             : res.status(404).send('No se encuentra el Videojuego')
@@ -55,8 +69,9 @@ router.get('/videogames', async(req, res)=>{
         else{
             res.status(200).json(games)
         }
-
 })
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
 // GET /videogame/{idVideogame}:
 // Obtener el detalle de un videojuego en particular
@@ -67,14 +82,14 @@ router.get('/videogames', async(req, res)=>{
     //name img genre
     // Incluir los géneros asociados
 
-    router.get('/videogames:id', async(req,res)=>{
+    router.get('/videogame/:id', async(req,res)=>{
     const {id}= req.params;
+    console.log(id)
     try {
-            if(!Number.isInteger(id)){
+            if(id.length>8){
                 const game = await Videogame.findOne({
                     where: {id: id},
                 })
-                console.log(game)
                 return res.status(200).send(game)
             }
             const game = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
@@ -89,35 +104,42 @@ router.get('/videogames', async(req, res)=>{
             }
             res.status(200).send(result)
         } catch (err) {
-            next(err)
+            console.log(err)
         }
 
 })
 
-
-
+//-----------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------
 
-
 router.get('/genres', async(req, res)=>{
-    try{
+
         const genresApi= await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`)
         const arrOfGenres= genresApi.data.results.map(g=> {
             return {
                 name: g.name
             }
         })
-        Genre.bulkCreate(arrOfGenres)
+    Genre.bulkCreate(arrOfGenres)
         //clase de Mati -> precarga para DB
-    }
-    catch(err){
-        console.log(err)
-    }
+    const allGenres= await Genre.findAll();
+    res.send(allGenres) 
 })
 
 //--------------------------------------------------------------------
 //--------------------------------------------------------------------
 
+router.post('/videogames', async(req,res)=>{
+    try{
+        const{img, name,description,released_date, genres, rating,platforms}= req.body;
+    const createdVideoGame = await Videogame.create({
+        name, img, description, released_date, rating, platforms
+    })
+    res.json(createdVideoGame)}
+    catch(err){
+        console.log(err)
+    }
+})
 
 
 module.exports = router;
