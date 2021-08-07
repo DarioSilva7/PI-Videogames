@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false
     },
-    created:{
+    created:{ //asi puedo filtrar por creados
       type: DataTypes.BOOLEAN,
       defaultValue: true,
       allowNull: true 
@@ -32,7 +32,11 @@ module.exports = (sequelize) => {
     },
     rating: {
       type: DataTypes.DECIMAL
-    }
+    },
+    platforms: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   
   },{
     timestamps: false
