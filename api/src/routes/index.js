@@ -33,26 +33,15 @@ const mapGames =(arreglo)=>{
     return aux
 }
 
-const getDBgame= async name=>{
-    if (name){
-        let byName= await Videogame.findAll({
-            where:{ name:name},
-            include:{
-                model: Genre,
-                attributes: ['name'],
-                through:{
-                    attributes:[]}
-        }})
-        return  byName
-    }
+const getDBgame= async ()=>{
     return await Videogame.findAll({
-        include:{
-            model: Genre,
-            attributes: ['name'],
-            through:{
-                attributes:[]
-            }
+    include:{
+        model: Genre,
+        attributes: ['name'],
+        through:{
+            attributes:[]
         }
+    }
     })
 }
 
@@ -75,16 +64,26 @@ router.get('/videogames', async(req, res)=>{
     if(name){
         const allgames= await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`)
         let byName= await allgames.data.results.filter(n=> n.name.toLowerCase().includes(name.toLowerCase()))
+        // console.log(byName[0].parent_platforms)
         let arr= byName.map(e=>{
+            // console.log(e.parent_platforms)
             return {
                 id: e.id,
                 name: e.name,
                 img: e.background_image,
                 genre: e.genres.map(g=> g.name),
-                platforms: e.parent_platforms.map(p=>p.name)
+                platforms: e.parent_platforms.map(p=>p.platform.name)
             }})
-        let ofDB= getDBgame(name)
-        
+
+        let ofDB= Videogame.findAll({
+                    where:{ name:name},
+                    include:{
+                        model: Genre,
+                        attributes: ["name"],
+                        through:{
+                            attributes:[]}
+                    }})
+
         let arrByName= arr.concat(ofDB)
             arrByName.length ?
             res.status(200).send(arrByName) 
@@ -117,21 +116,17 @@ router.get('/videogames', async(req, res)=>{
                         model: Genre,
                         attributes: ["name"],
                         through:{ attributes:[]}
-                    // ,
-                    //     model: Platform,
-                    //     attributes: ["name"],
-                    //     through:{ attributes:[]}
-                    //
                  }
                 })
                 return res.status(200).send(game)
             }
             const game = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
           
+            console.log(game.data.genres)
             const result = {
                 name: game.data.name,
                 img: game.data.background_image,
-                genre: game.data.genres,
+                genre: game.data.genres.map(g=>g.name),
                 description: game.data.description,
                 released: game.data.released,
                 rating: game.data.rating,
@@ -155,20 +150,13 @@ router.post('/videogames', async(req,res)=>{
             img, name, description, released_date, genres, rating, platforms
         })
 
-    const generos= await Genre.findAll({
+        const generos= await Genre.findAll({
         where:{
             name: genres
         }
     })
-    createdVideoGame.addGenre(generos)
-
-    // const plataforma= await Platform.findAll({
-    //     where:{
-    //         name: platforms
-    //     }
-    // })
-    // createdVideoGame.addPlatform(plataforma)
-    res.json(createdVideoGame)
+        createdVideoGame.addGenre(generos)
+        res.json(createdVideoGame)
     }
 
     catch(err){
