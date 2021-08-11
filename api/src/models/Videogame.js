@@ -10,11 +10,6 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false
     },
-    // created:{ //asi puedo filtrar por creados
-    //   type: DataTypes.BOOLEAN,
-    //   defaultValue: true,
-    //   allowNull: true 
-    // },
     name: {
       type: DataTypes.STRING,
       allowNull: false // El false, le impide que el campo este vacio
@@ -33,11 +28,10 @@ module.exports = (sequelize) => {
     rating: {
       type: DataTypes.DECIMAL
     },
-    platforms: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-  
+    platforms:{
+      type: DataTypes.ARRAY(DataTypes.STRING),
+      allowNull: false
+    }
   },{
     timestamps: false
   });
