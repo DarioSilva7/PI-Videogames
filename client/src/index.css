@@ -1,4 +1,7 @@
 body {
+  background-image: url("https://www.masgamers.com/wp-content/uploads/2020/09/The-Last-of-Us-Part-II-foto-3.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

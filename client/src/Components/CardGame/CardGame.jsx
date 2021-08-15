@@ -1,13 +1,18 @@
 import React from 'react';
-import {Link, link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
-export default function LandingPage() {
+export default function CardGame({name, image, genre}) {
     return(
         <div>
-            <h1>WELCOMES TO MY VIDEOGAMES APP</h1>
-            <Link to='/home'>
-            <button>ENTER</button>
-            </Link>
+            <h3>{name}</h3>
+            <h5>{genre}</h5>
+
+            <img src={image} alt="Img not found" width="500px" height="400px" />
+
+
+            {/* <Link to='/home'> */}
+            {/* <button>ENTER</button> */}
+            {/* </Link> */}
         </div>
-    )
+    );
 }

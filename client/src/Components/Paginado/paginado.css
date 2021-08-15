@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content:space-around;
+}
+.paginado{ 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#number{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
