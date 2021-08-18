@@ -2,17 +2,18 @@
     margin: 0;
     padding: 0;
   }
-  
-  html,
-  body {
+   
+
+  .body {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
   }
   
-  body {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
+.body {
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91188f4a-d4d3-4f33-af28-2be841b04cf0/d4an1tk-2b341f5c-ada5-4a0f-9c3d-03659cd6f8fb.jpg/v1/fill/w_1024,h_576,q_75,strp/vive_en_estado_play__ps_mexico_by_nonalizhus_d4an1tk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOTExODhmNGEtZDRkMy00ZjMzLWFmMjgtMmJlODQxYjA0Y2YwXC9kNGFuMXRrLTJiMzQxZjVjLWFkYTUtNGEwZi05YzNkLTAzNjU5Y2Q2ZjhmYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pzTeWg8ngSQyyWpI6hlB62icbnFs1Z40eBNZyILWqzc");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .buttons {
@@ -122,6 +123,11 @@
             transform: rotate(40deg);
   }
 
+
+
+
+
+  
 /* body {
     display: flex;
     justify-content: center;

@@ -1,5 +1,6 @@
 import { number } from "prop-types";
 import React from "react";
+import './paginado.css'
 
 export default function Paginado({vgPerPage, allVideoGames, paginado}) {
    const pageNumber=[]
@@ -7,14 +8,14 @@ export default function Paginado({vgPerPage, allVideoGames, paginado}) {
         pageNumber.push(i)
     }
     return (
-        <nav className='container'>
-            <div className="paginado">
+        <nav className='nav'>
+            <div className="nro">
 
-            <ul>
+            <ul className="pagination">
             {   pageNumber && 
                 pageNumber.map(nro=>(
-                    <li id='number' key={nro}>
-                        <a onClick={()=> paginado(nro)}> {nro} </a>
+                    <li className='number' key={nro}>
+                        <a className="ancla" onClick={()=> paginado(nro)}> {nro} </a>
                     </li>
             ))
             }
