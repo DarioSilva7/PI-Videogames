@@ -10,20 +10,25 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false
     },
+    createdInDB:{
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
+      allowNull:false
+    },
     name: {
       type: DataTypes.STRING,
       allowNull: false // El false, le impide que el campo este vacio
     },
     img:{
       type: DataTypes.TEXT,
-      allowNull: false
+      allowNull: true
     },
     description: {
       type: DataTypes.TEXT,
       allowNull: false
     },
     released_date: {
-      type: DataTypes.DATE       //allowNull: true-->  viene por default
+      type: DataTypes.STRING       //allowNull: true-->  viene por default
     },
     rating: {
       type: DataTypes.DECIMAL

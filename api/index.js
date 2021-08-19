@@ -32,14 +32,14 @@ conn.sync({ force: false}).then(() => {
     ))
   })
     
-    // axios.get(`https://api.rawg.io/api/platforms/parents?key=${API_KEY}`).then(rta=>{
-    // return rta.data.results.forEach(e=> Platform.findOrCreate({
-    //   where:{
-    //     id: e.id,
-    //     name: e.name
-    //   }
-    //   }))
-  // });
+  //   axios.get(`https://api.rawg.io/api/platforms/parents?key=${API_KEY}`).then(rta=>{
+  //   return rta.data.results.forEach(e=> Platform.findOrCreate({
+  //     where:{
+  //       id: e.id,
+  //       name: e.name
+  //     }
+  //     }))
+  // }); 
   
   server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
