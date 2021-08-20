@@ -14,7 +14,7 @@ export function getGames(){
 }
 
 export function filterByGenre(payload){
-    console.log(payload," EL VALUE DEL SELECT") //el value del select
+    console.log(payload," EL VALUE DEL SELECT")
     return {
         type: 'FILTER_BY_GENRE',
         payload

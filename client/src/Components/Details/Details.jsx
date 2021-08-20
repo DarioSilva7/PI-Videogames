@@ -37,7 +37,7 @@ return(
                     </p>
                     <p>Released: {theVideoGame.released_date}</p>
                     <p>Genres: {theVideoGame.genres?.length>0 ? theVideoGame.genres?.map(g=> g.name + (" - ")): "Empty"}</p>
-                    <p>Platforms: {theVideoGame.platforms?.length>0 ? theVideoGame.platforms?.map(p=> p.name + " - " || p + " - "): "Empty"}</p>
+                    <p>Platforms: {theVideoGame.platforms.length>0 ? theVideoGame.platforms.map(p=> typeof p === "object"? <p>  {p.name + " - "}</p> : <p> {p} </p> ): "Empty"}</p>
                 </div> 
             }
             <Link to="/home">Go back 👋</Link>

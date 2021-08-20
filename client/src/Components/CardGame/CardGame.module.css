@@ -4,8 +4,17 @@
     height: 200px;
     border: 3px solid #555;
     border-radius: 20%;
-}
+    background-color: black;
+    opacity: 0.85;
 
+}
+.h3card{
+    text-decoration: none;
+    color:black
+}
 .genre{
     display: inline-flex;
+    margin-top: -20px;
+    color: black;
+    text-decoration: none;
 }

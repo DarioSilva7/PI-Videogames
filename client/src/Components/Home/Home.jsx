@@ -13,9 +13,9 @@ export default function Home() {
     const allVideoGames = useSelector((state)=>state.showVideoGames)
     // console.log(allVideoGames, "///////////////////ALLVIDEOGAMES")
     //guardo el estado de showVideogames en allVideoGames
-    //paginado
+
     const [currentPage, setCurrentPage]= useState(1) //guardo el estado de mi pagina actual. El (1) hace referencia a la pagina en que inica
-    const [vgPerPage, setvgPerPage]= useState(9) // Este esta local, setea cuantas videogames muestra por pagina
+    const [vgPerPage, setvgPerPage]= useState(9) // Seteo cuantos videogames muestro por pagina
     const indexOfLastVG= currentPage * vgPerPage // 9
     const indexOfFirstVG= indexOfLastVG - vgPerPage // 0
     
@@ -123,20 +123,22 @@ export default function Home() {
             
             <div>
 {                console.log(currentVG, "////////////////////// GGGGGG")}
-                {
+                { 
+                        
+                        // console.log(g.name)
                     currentVG?.map( (g,i)=>(
                         <div  className={styles.card} key={i}>
                             <Link to={`/videogame/${g.id}`}>
                             
                                 <CardGame 
                                     name={g.name}
-                                    image={g.img} // condicional para imagen default
+                                    image={g.img } // condicional para imagen default
                                     // c.image? c.image: <img src=" url..."> 
-                                    genre={g.genres.map(g=> <h4 key={g.id}>{" - " + g.name}</h4>)} 
+                                    // genre={g.genres.map(g=> <h4 key={g.id}> {" - " + g.name} </h4> )} 
+                                    genre={g.genres}
                                     id={g.id}
                                     />
                             </Link>
-                            
                         </div>
                     ))
                 }

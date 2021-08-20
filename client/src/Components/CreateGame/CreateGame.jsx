@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {Link, useHistory} from 'react-router-dom';
 import { postGame, getGenres, getGames } from "../../Actions/index";
 import { useDispatch, useSelector } from "react-redux";
+import styles from './CreateGame.module.css'
 
 export default function VideogameCreate(params) {
     const dispatch= useDispatch()
@@ -55,7 +56,7 @@ export default function VideogameCreate(params) {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <h1>CREATE YOUR VIDEOGAME 😀</h1>
             <Link to="/home"><button>HOME</button></Link>
            
@@ -161,6 +162,7 @@ export default function VideogameCreate(params) {
                     name="img"
                     id="image"
                     onChange={handleChange}
+                    value={form.img}
                     />
 
                 <button type="submit">CREATE!</button>
