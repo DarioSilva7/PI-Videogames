@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import CardGame from "../CardGame/CardGame";
 import Paginado from "../Paginado/paginado";
 import SearchBar from "../SearchBar/SearchBar";
-import './home.css'
+import styles from './home.module.css'
 
 export default function Home() {
     const dispatch= useDispatch()
@@ -52,17 +52,18 @@ export default function Home() {
     }
 
     return(
-        <div> 
-            <div className="container">
+        <div className={styles.body} > 
+                  <h1 className={styles.h1}>Henry Videogames</h1>
+            <div className={styles.filters}>
 
-                <div className="box">
+                <div className={styles.box}>
                     <select onChange={e=> handleSort(e)}>
-                        <option value='az'>Ascendent</option>
-                        <option value='za'>Descendent</option>
+                        <option value='az'>Ascendent A-Z</option>
+                        <option value='za'>Descendent Z-A</option>
                     </select>
                 </div>
 
-                <div className="box">
+                <div className={styles.box}>
                     <select onChange={e=> handleFilterCreated(e)}>
                         <option value='All'>All</option>
                         <option value='Created'>Created</option>
@@ -71,7 +72,7 @@ export default function Home() {
                 </div>
             
 
-                <div className="box">
+                <div className={styles.box}>
                     <select onChange={e=> handleFilterGenre(e)}>
                         <option value='All'>All</option>
                         <option value='Action'>Action</option>
@@ -100,15 +101,11 @@ export default function Home() {
             <div>
                 <SearchBar />
             </div>
-            <div className="contenedor">
+            <div className={styles.contenedor}>
                 <div>
                     <Link to= '/videogames' >CREAT VIDEOGAME</Link>
                 </div>
-                <Paginado 
-                vgPerPage={vgPerPage}
-                allVideoGames={allVideoGames.length}
-                paginado={paginado}
-                />
+
                 <div>
                     <button onClick={e=>{  handleClick(e) }} >
                     Reload videogames
@@ -128,23 +125,28 @@ export default function Home() {
 {                console.log(currentVG, "////////////////////// GGGGGG")}
                 {
                     currentVG?.map( (g,i)=>(
-                        <div key={i}>
+                        <div  className={styles.card} key={i}>
                             <Link to={`/videogame/${g.id}`}>
                             
                                 <CardGame 
                                     name={g.name}
-                                    image={g.img}
+                                    image={g.img} // condicional para imagen default
                                     // c.image? c.image: <img src=" url..."> 
-                                    genre={g.genres.map(g=> <h4 key={g.id}>{g.name}</h4>)} 
+                                    genre={g.genres.map(g=> <h4 key={g.id}>{" - " + g.name}</h4>)} 
                                     id={g.id}
                                     />
                             </Link>
                             
-                        {/* </Link> */}
                         </div>
                     ))
                 }
-            </div>
+                
+            </div >
+            <Paginado 
+                vgPerPage={vgPerPage}
+                allVideoGames={allVideoGames.length}
+                paginado={paginado}
+                />
     </div>
     )
 }

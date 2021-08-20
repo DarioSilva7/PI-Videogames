@@ -1,21 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import './LandingPage.css'
+import styles from './LandingPage.module.css'
 
 
 export default function LandingPage() {
     return(
-        <body className="body">
-
-        <div className="buttons">
-            <h1 >WELCOMES TO MY VIDEOGAMES APP</h1>
-             <div className="container"> 
-                <Link to='/home'>
-                    {/* <button  id="enter-btn">E N T E R</button> */}
-                    <button  class="btn effect01" target="_blank">E N T E R</button>
-                </Link>
+      
+            <div className={styles.body}>
+                <h1 >WELCOMES TO MY VIDEOGAMES APP</h1>
+                <div className={styles.container}> 
+                    <Link to='/home'>
+                        <button  className={`${styles.btn} ${styles.effect01}`} target="_blank">E N T E R</button>
+                    </Link>
+                </div>
             </div>
-        </div>
-        </body>
     )
 }

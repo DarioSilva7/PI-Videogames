@@ -1,0 +1,11 @@
+.img{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+
+.bg{
+    background-color: black;
+}
+p {color: white}

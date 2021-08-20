@@ -14,18 +14,18 @@ function rootReducer(state= initialState, action){
                 showVideoGames: action.payload,
             }
             
-            case 'FILTER_BY_GENRE':
-                let allGames= state.allVideogames
-                const mapeo= allGames.map(g=> {
-                    return {...g, genres: g.genres.map(el=>el.name)}
-                }) // cambio la forma de guardar los genres, hago un array con los nombres de cada genero
-                
-                const filtrados= action.payload=== 'All' ? allGames : mapeo.filter(e => {
-                    return e.genres.includes(action.payload)}) // filtro 
-                return { 
-                    ...state,
-                    showVideoGames: filtrados
-                }
+        case 'FILTER_BY_GENRE':
+            let allGames= state.allVideogames
+            const mapeo= allGames.map(g=> {
+                return {...g, genres: g.genres.map(el=>el.name)}
+            }) // cambio la forma de guardar los genres, hago un array con los nombres de cada genero
+            
+            const filtrados= action.payload=== 'All' ? allGames : mapeo.filter(e => {
+                return e.genres.includes(action.payload)}) // filtro 
+            return { 
+                ...state,
+                showVideoGames: filtrados
+            }
 
         case 'SORT_AZ_ZA': {
             if (action.payload === "az") return { ...state, showVideoGames: [...state.showVideoGames].sort((game1, game2) => game1.name > game2.name ? 1 : -1) }
@@ -37,10 +37,10 @@ function rootReducer(state= initialState, action){
                 return {...state, showVideoGames: [...state.showVideoGames].sort((a, b) => a.rating > b.rating ? 1 : -1)}
             }
             
-            case 'IS_CREATED' :{
-                let allGames= state.allVideogames
-                var losfiltrados= action.payload === "Created" ? allGames.filter(g=> g.createdInDB): allGames.filter(g=> !g.createdInDB)
-                return action.payload === 'All' ? {...state, showVideoGames:allGames} : {...state, showVideoGames: losfiltrados}
+        case 'IS_CREATED' :{
+            let allGames= state.allVideogames
+            var losfiltrados= action.payload === "Created" ? allGames.filter(g=> g.createdInDB): allGames.filter(g=> !g.createdInDB)
+            return action.payload === 'All' ? {...state, showVideoGames:allGames} : {...state, showVideoGames: losfiltrados}
         }
 
         case 'GET_BY_NAME':{
@@ -66,7 +66,9 @@ function rootReducer(state= initialState, action){
         }
 
         case 'POST_VIDEOGAME':{
-            return{ ...state}
+            return{ 
+                ...state,
+            }
         }
 
         default:

@@ -1,0 +1,60 @@
+.body{
+    /* background-image: url("https://www.masgamers.com/wp-content/uploads/2020/09/The-Last-of-Us-Part-II-foto-3.jpg"); */
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91188f4a-d4d3-4f33-af28-2be841b04cf0/d4an1tk-2b341f5c-ada5-4a0f-9c3d-03659cd6f8fb.jpg/v1/fill/w_1024,h_576,q_75,strp/vive_en_estado_play__ps_mexico_by_nonalizhus_d4an1tk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOTExODhmNGEtZDRkMy00ZjMzLWFmMjgtMmJlODQxYjA0Y2YwXC9kNGFuMXRrLTJiMzQxZjVjLWFkYTUtNGEwZi05YzNkLTAzNjU5Y2Q2ZjhmYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pzTeWg8ngSQyyWpI6hlB62icbnFs1Z40eBNZyILWqzc");
+  
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    height: auto;
+    width: 100%;
+}
+.h1{
+    color:white
+}
+.container {
+    display:inline-flex;
+    align-items:center;
+    /* justify-content:center; */
+    flex-direction: row;
+    text-align: center;
+    padding:  40px 0px;
+    width: 240px;
+}
+.filters{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.box{
+    display: inline-flex;
+    /* display: flex; */
+    justify-content:space-around;
+    background-color: red;
+    flex-direction: row;
+ 
+}
+
+.contenedor{
+    display: flex;
+    width: 100%;
+    height: 20px;
+    margin: 10px;
+    /* background-color: lightblue; */
+    justify-content: space-around;
+}
+h1 {
+    display: inline;
+}
+
+.card{
+    margin: 20px;
+    /* background-color: limegreen; */
+    display: inline-block;
+    width: 300px; 
+    height: 260px; 
+    border: 3px solid #555;
+    border-radius: 20%;
+}

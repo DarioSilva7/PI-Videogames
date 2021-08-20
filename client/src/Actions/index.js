@@ -55,7 +55,7 @@ export function getByName(name){
             })
         }
         catch(err){
-            console.log("Videogame not found")
+            alert("Videogame not found")
         }
     }
 }
@@ -72,7 +72,7 @@ export function getdetalle(id){
             })
         }
         catch(error){
-            console.log("Videogame not found")
+            alert("Videogame not found")
         }
     }
 }
@@ -95,7 +95,7 @@ export function getGenres(){
 
 export function postGame(payload){
     return async function(dispatch){
-        const response= await axios.post('http://localhost:3001/videogame', payload)
+        const response= await axios.post('http://localhost:3001/videogames', payload)
         console.log(response,"---------------response")
         return response
     }

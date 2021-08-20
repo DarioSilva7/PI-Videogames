@@ -1,19 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-  }
-   
-
   .body {
-    box-sizing: border-box;
-    height: 100%;
-    width: 100%;
-  }
-  
-.body {
-    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91188f4a-d4d3-4f33-af28-2be841b04cf0/d4an1tk-2b341f5c-ada5-4a0f-9c3d-03659cd6f8fb.jpg/v1/fill/w_1024,h_576,q_75,strp/vive_en_estado_play__ps_mexico_by_nonalizhus_d4an1tk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOTExODhmNGEtZDRkMy00ZjMzLWFmMjgtMmJlODQxYjA0Y2YwXC9kNGFuMXRrLTJiMzQxZjVjLWFkYTUtNGEwZi05YzNkLTAzNjU5Y2Q2ZjhmYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pzTeWg8ngSQyyWpI6hlB62icbnFs1Z40eBNZyILWqzc");
-    background-repeat: no-repeat;
+    background-image: url("https://www.masgamers.com/wp-content/uploads/2020/09/The-Last-of-Us-Part-II-foto-3.jpg");
     background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
   }
   
   .buttons {
@@ -22,30 +11,21 @@
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-  /*   padding: 2em 0em; */
-  }
-  
-  .container {
+    /* width: 100%;
+    height: 100%; */
+    /* margin: 0 auto; */
+    padding: 2em 0em;
+   } 
+   .container {
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding:  40px 0px;
-    width: 240px;
-  }
-  
-  h1 {
-    text-align: left;
-    color: #444;
-    letter-spacing: 0.05em;
-    margin: 0 0 0.4em;
-    font-size: 1em;
-  }
-  
+    width: 100%;
+    height: 100%;
+  } 
+
   p {
     text-align: left;
     color: #444;
@@ -71,8 +51,8 @@
     text-decoration: none;
     color: black
   }
+ 
   
-  /*btn_background*/
   .effect01 {
     color: #FFF;
     border: 4px solid #000;
@@ -88,7 +68,7 @@
     box-shadow:0px 0px 0px 4px #EEE inset;
   }
   
-  /*btn_text*/
+  
   .effect01 span {
     transition: all 0.2s ease-out;
     z-index: 2;
@@ -97,8 +77,7 @@
     letter-spacing: 0.13em;
     color: #333;
   }
-  
-  /*highlight*/
+
   .effect01:after {
     background: #FFF;
     border: 0px solid #000;
@@ -111,7 +90,7 @@
     -webkit-transform: rotate(35deg);
             transform: rotate(35deg);
     width: 50px;
-    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);/*easeOutCirc*/
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     z-index: 1;
   }
   .effect01:hover:after {
@@ -122,7 +101,6 @@
     -webkit-transform: rotate(40deg);
             transform: rotate(40deg);
   }
-
 
 
 

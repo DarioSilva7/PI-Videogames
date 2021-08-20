@@ -10,7 +10,6 @@ function App() {
   
   return (
     <BrowserRouter>
-      <h1>Henry Videogames</h1>
     <div className="App">
       <Switch>  
       {/* El Switch, se queda con lo ultimo que se ingreso correctamente en el url */}

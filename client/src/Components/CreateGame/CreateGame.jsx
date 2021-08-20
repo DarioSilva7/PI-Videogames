@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 import {Link, useHistory} from 'react-router-dom';
-import { postGame, getGenres } from "../../Actions/index";
+import { postGame, getGenres, getGames } from "../../Actions/index";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function VideogameCreate(params) {
     const dispatch= useDispatch()
     const generos= useSelector((state)=> state.stateGenres)
-    console.log(generos,"*---------------------------* generos")
+    // console.log(generos,"*---------------------------* generos")
     const thePlatforms=['PlayStation','Xbox','Nintendo','SEGA','Android','3DO','Atari','Linux','iOS','Commodore','Apple Macintosh']
 
     const [form, setForm]= useState({
@@ -26,14 +26,14 @@ export default function VideogameCreate(params) {
             ...form,
             [e.target.name]: e.target.value
         })
-        console.log(form,"*****handlechange")
+        // console.log(form,"*****handlechange")
     }
     function handleGenres(e){
         setForm({
             ...form,
             genres: [...form.genres, e.target.value]
         })
-        console.log(form,"*****handleArray")
+        // console.log(form,"*****handleGenres")
     }
 
     function handlePlatforms(e){
@@ -41,18 +41,18 @@ export default function VideogameCreate(params) {
             ...form,
             platforms: [...form.platforms, e.target.value]
         })
-        console.log(form,"*****handleArray")
+        // console.log(form,"*****handlePlatforms")
     }
 
 
     function handleSubmit(e) {
-        alert("Videogame created 😁")
-        console.log(form,"-----------------el submit")
         dispatch(postGame(form))
+        alert("Videogame created 😁")
+        // console.log(form,"-----------------el submit")
         setForm({})
-        history.push('/home') // Me lleva al home luego de crear el juego
+        dispatch(getGames()) // Me lleva al home luego de crear el juego
+        history.push('/home')
     }
-    
 
     return (
         <div>
@@ -68,6 +68,7 @@ export default function VideogameCreate(params) {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
+                    required
                     />
             
                     <label htmlFor="description">Description:</label>
@@ -77,15 +78,19 @@ export default function VideogameCreate(params) {
                     name="description"
                     value={form.description}
                     onChange={handleChange}
+                    required
+                    maxLength="150"
+                    rows="5"
                     />
                     
                     <label htmlFor="released date">Released date:</label>
                     <input 
                     type="date"
                     id="released date"
-                    name="released date"
+                    name="released_date"
                     value={form.released_date}
                     onChange={e=> handleChange(e)}
+                    required
                     />
 
                     <label>Rating:</label>
@@ -121,11 +126,11 @@ export default function VideogameCreate(params) {
                     />5
                 
                     <label htmlFor="genres">Genres:
-                        <select onChange={e=> handleGenres(e)} id="genres" name="genres" defaultValue="">
+                        <select onChange={e=> handleGenres(e)} id="genres" name="genres" defaultValue="" required>
                             <option name="genres" value="">- - - - -</option>
                             {
                                 generos?.map(g=>(
-                                    <option value={g}> {g}</option>
+                                    <option value={parseInt(g.id)}> {g.name}</option>
                                     ))
                             }
                         </select>
@@ -134,8 +139,8 @@ export default function VideogameCreate(params) {
                     </ul>
                     </label>
 
-                    <label htmlFor="platforms">Platforms:
-                        <select onChange={e=> handlePlatforms(e)} id="platforms" name="platforms" defaultValue="">
+                    <label htmlFor="platforms" >Platforms:
+                        <select onChange={e=> handlePlatforms(e)} id="platforms" name="platforms" defaultValue="" required>
                             <option name="platforms" value="">- - - - -</option>
                             {
                                 thePlatforms?.map(p=>(
@@ -153,7 +158,7 @@ export default function VideogameCreate(params) {
                     <label htmlFor="image">Image:</label>
                     <input 
                     type="text"
-                    name="image"
+                    name="img"
                     id="image"
                     onChange={handleChange}
                     />
