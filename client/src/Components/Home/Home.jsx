@@ -36,7 +36,7 @@ export default function Home() {
     }
     function handleFilterGenre(e) {
         dispatch(filterByGenre(e.target.value))
-        // console.log(e.target.value,"TARGET DEL SELECT")
+
     }
     function handleSort(e) {
         e.preventDefault();
