@@ -32,6 +32,7 @@ conn.sync({ force: false}).then(() => {
     ))
   })
     
+  // Plataformas
   //   axios.get(`https://api.rawg.io/api/platforms/parents?key=${API_KEY}`).then(rta=>{
   //   return rta.data.results.forEach(e=> Platform.findOrCreate({
   //     where:{
