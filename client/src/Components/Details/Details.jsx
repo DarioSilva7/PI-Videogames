@@ -31,10 +31,7 @@ return(
                     <img className={styles.img} src={theVideoGame.img} alt="Img not found"></img>
                     </div>
                     <p>Rating: {theVideoGame.rating}</p>
-                    <p dangerouslySetInnerHTML={funcDescription()}>
-
-                        {/* Description: {theVideoGame.description} */}
-                    </p>
+                    <p dangerouslySetInnerHTML={funcDescription()}></p>
                     <p>Released: {theVideoGame.released_date}</p>
                     <p>Genres: {theVideoGame.genres?.length>0 ? theVideoGame.genres?.map(g=> g.name + (" - ")): "Empty"}</p>
                     <p>Platforms: {theVideoGame.platforms?.length>0 ? theVideoGame.platforms.map(p=> typeof p === "object"? <p>  {p.name + " - "}</p> : <p> {p} </p> ): "Empty"}</p>

@@ -8,6 +8,7 @@ const initialState={
 function rootReducer(state= initialState, action){
     switch(action.type){
         case 'GET_VIDEOGAMES':
+            console.log(action.payload)
             return{
                 ...state,
                 allVideogames: action.payload,
@@ -18,7 +19,7 @@ function rootReducer(state= initialState, action){
             let allGames= state.allVideogames
             const mapeo= allGames.map(g=> {
                 return {...g, genres: g.genres.map(el=>el.name)}
-            }) // cambio la forma de guardar los genres, hago un array con los nombres de cada genero
+            }) 
             
             const filtrados= action.payload=== 'All' ? allGames : mapeo.filter(e => {
                 return e.genres.includes(action.payload)}) // filtro 
@@ -44,14 +45,12 @@ function rootReducer(state= initialState, action){
         }
 
         case 'GET_BY_NAME':{
-            // console.log(action.payload,"////////// ACTION//PAYLOAD")
             return{
                 ...state,
                 showVideoGames: action.payload
             }
         }
         case 'GET_GENRES':{
-            console.log(action.payload,"ACTIONPAYLOAD--- REDUCER")
             return{
                 ...state,
                 stateGenres: action.payload

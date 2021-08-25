@@ -11,18 +11,13 @@ import styles from './home.module.css'
 export default function Home() {
     const dispatch= useDispatch()
     const allVideoGames = useSelector((state)=>state.showVideoGames)
-    // console.log(allVideoGames, "///////////////////ALLVIDEOGAMES")
-    //guardo el estado de showVideogames en allVideoGames
 
-    const [currentPage, setCurrentPage]= useState(1) //guardo el estado de mi pagina actual. El (1) hace referencia a la pagina en que inica
-    const [vgPerPage, setvgPerPage]= useState(9) // Seteo cuantos videogames muestro por pagina
-    const indexOfLastVG= currentPage * vgPerPage // 9
-    const indexOfFirstVG= indexOfLastVG - vgPerPage // 0
+    const [currentPage, setCurrentPage]= useState(1) 
+    const [vgPerPage, setvgPerPage]= useState(9)
+    const indexOfLastVG= currentPage * vgPerPage 
+    const indexOfFirstVG= indexOfLastVG - vgPerPage
     
-    var currentVG= allVideoGames.slice(indexOfFirstVG,indexOfLastVG) //los videogames de la pag actual 
-    //nro pag          iOfFirstVG      iOfLastVG     
-    //   1 ----------------0----------------9
-    //   2 ----------------10----------------19
+    var currentVG= allVideoGames.slice(indexOfFirstVG,indexOfLastVG) 
     const paginado = (pageNumber)=>{
         setCurrentPage(pageNumber)
     }
@@ -53,7 +48,7 @@ export default function Home() {
 
     return(
         <div className={styles.body} > 
-                  <h1 className={styles.h1}>Henry Videogames</h1>
+                  <h1 className={styles.h1}>-Henry Videogames-</h1>
             <div className={styles.filters}>
 
                 <div className={styles.box}>
@@ -122,19 +117,14 @@ export default function Home() {
 
             
             <div>
-{                console.log(currentVG, "////////////////////// GGGGGG")}
                 { 
-                        
-                        // console.log(g.name)
                     currentVG?.map( (g,i)=>(
                         <div  className={styles.card} key={i}>
                             <Link to={`/videogame/${g.id}`}>
                             
                                 <CardGame 
                                     name={g.name}
-                                    image={g.img } // condicional para imagen default
-                                    // c.image? c.image: <img src=" url..."> 
-                                    // genre={g.genres.map(g=> <h4 key={g.id}> {" - " + g.name} </h4> )} 
+                                    image={g.img }
                                     genre={g.genres}
                                     id={g.id}
                                     />

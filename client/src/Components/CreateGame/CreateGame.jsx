@@ -7,17 +7,15 @@ import styles from './CreateGame.module.css'
 export default function VideogameCreate(params) {
     const dispatch= useDispatch()
     const generos= useSelector((state)=> state.stateGenres)
-    // console.log(generos,"*---------------------------* generos")
     const thePlatforms=['PlayStation','Xbox','Nintendo','SEGA','Android','3DO','Atari','Linux','iOS','Commodore','Apple Macintosh']
 
     const [form, setForm]= useState({
         genres:[],
         platforms:[]
     })
-    const history= useHistory() // metodo del rputer que me redirige a la ruta que le diga
-    
+    const history= useHistory() 
     useEffect(()=>{
-        // console.log("----------///////////////////////-----------")
+
         dispatch(getGenres())
         // eslint-disable-next-line
     },[])
@@ -27,14 +25,12 @@ export default function VideogameCreate(params) {
             ...form,
             [e.target.name]: e.target.value
         })
-        // console.log(form,"*****handlechange")
     }
     function handleGenres(e){
         setForm({
             ...form,
             genres: [...form.genres, e.target.value]
         })
-        // console.log(form,"*****handleGenres")
     }
 
     function handlePlatforms(e){
@@ -42,16 +38,14 @@ export default function VideogameCreate(params) {
             ...form,
             platforms: [...form.platforms, e.target.value]
         })
-        // console.log(form,"*****handlePlatforms")
     }
 
 
     function handleSubmit(e) {
         dispatch(postGame(form))
         alert("Videogame created 😁")
-        // console.log(form,"-----------------el submit")
         setForm({})
-        dispatch(getGames()) // Me lleva al home luego de crear el juego
+        dispatch(getGames())
         history.push('/home')
     }
 
