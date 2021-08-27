@@ -1,8 +1,16 @@
 import axios from 'axios'
 
+export function setLoading(){
+    return{
+        type: "SET_LOADING"
+    }
+}
+
 export function getGames(){
     return async function(dispatch){
+        dispatch(setLoading())
         var json= await axios.get('http://localhost:3001/videogames',{
+            
         });
         
     return dispatch({
@@ -91,5 +99,11 @@ export function postGame(payload){
     return async function(dispatch){
         const response= await axios.post('http://localhost:3001/videogames', payload)
         return response
+    }
+}
+
+export function resetGames(){
+    return {
+        type: "RESET_GAMES"
     }
 }

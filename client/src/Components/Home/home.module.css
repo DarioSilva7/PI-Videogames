@@ -2,175 +2,56 @@
 @import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
 @import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
 
+.loading{
+  background-image: url("https://64.media.tumblr.com/tumblr_m9ck6ebiGl1qi2riwo1_500.gifv");
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+h1{color:white}
+
 .body{
-    /* background-image: url("https://www.masgamers.com/wp-content/uploads/2020/09/The-Last-of-Us-Part-II-foto-3.jpg"); */
-    /* background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91188f4a-d4d3-4f33-af28-2be841b04cf0/d4an1tk-2b341f5c-ada5-4a0f-9c3d-03659cd6f8fb.jpg/v1/fill/w_1024,h_576,q_75,strp/vive_en_estado_play__ps_mexico_by_nonalizhus_d4an1tk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOTExODhmNGEtZDRkMy00ZjMzLWFmMjgtMmJlODQxYjA0Y2YwXC9kNGFuMXRrLTJiMzQxZjVjLWFkYTUtNGEwZi05YzNkLTAzNjU5Y2Q2ZjhmYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pzTeWg8ngSQyyWpI6hlB62icbnFs1Z40eBNZyILWqzc"); */
-  
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-attachment: fixed;
-    height: auto;
+  height: 100%;
+  width: 100%;
+}
+.body2{
+background-color: black;
+  height: auto;
+  width: 100%;
+}
+
+.fondo{
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91188f4a-d4d3-4f33-af28-2be841b04cf0/d4an1tk-2b341f5c-ada5-4a0f-9c3d-03659cd6f8fb.jpg/v1/fill/w_1024,h_576,q_75,strp/vive_en_estado_play__ps_mexico_by_nonalizhus_d4an1tk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOTExODhmNGEtZDRkMy00ZjMzLWFmMjgtMmJlODQxYjA0Y2YwXC9kNGFuMXRrLTJiMzQxZjVjLWFkYTUtNGEwZi05YzNkLTAzNjU5Y2Q2ZjhmYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pzTeWg8ngSQyyWpI6hlB62icbnFs1Z40eBNZyILWqzc");
+  height: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top;
+  background-position-y: -4rem;
+}
+
+.filters{
     width: 100%;
-    background: #1C6EA4;
-background: -moz-linear-gradient(45deg, #323b3f 0%, #212c33 50%, #bfc8ce 100%);
-background: -webkit-linear-gradient(45deg, #243846 0%, #2e5470 50%, #1b557c 100%);
-background: linear-gradient(45deg, #7d7f81 0%, #4a5358 50%, #243038 100%);
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
 }
-.h1 {
-    /* width: 100%;
-    height: 100%;
-    position: absolute; */
-    transform-style: preserve-3d;
-    animation: ಠ_ಠ 5s infinite alternate ease-in-out -7.5s;
-    animation-fill-mode: forwards;
-    transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+  .contenedor{
+    width: 100%;
+    height: auto;
   }
-.h1:after{
-        font: 100px/0.65 "Pacifico", "Kaushan Script", Futura, "Roboto", "Trebuchet MS", Helvetica, sans-serif;
-        content: "Henry Videogames !";
-        white-space: pre;
-        text-align: center;
-        /* height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 50px; */
-        color: whitesmoke;
-        letter-spacing: -2px;
-        text-shadow: 4px 0 10px rgba(0, 0, 0, 0.13);
-
-
-    /* color:white
-    font-size: 70px;
-    color: #dedde7;
-text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8; */
-/* color: #FFFFFF;
-text-shadow: 0 0 5px rgb(206, 206, 206), 0 0 10px rgb(194, 194, 194), 0 0 15px rgb(223, 223, 223), 0 0 20px #282928, 0 0 30px #282928, 0 0 40px #282928, 0 0 55px #1d1f1d, 0 0 75px #282928; */
-}
-
-.h1:nth-child(1):after {
-    transform: translateZ(0px);
-  }
-  
-  .h1:nth-child(2):after {
-    transform: translateZ(-1.5px);
-  }
-  
-  .h1:nth-child(3):after {
-    transform: translateZ(-3px);
-  }
-  
-  .h1:nth-child(4):after {
-    transform: translateZ(-4.5px);
-  }
-  
-  .h1:nth-child(5):after {
-    transform: translateZ(-6px);
-  }
-  
-  .h1:nth-child(6):after {
-    transform: translateZ(-7.5px);
-  }
-  
-  .h1:nth-child(7):after {
-    transform: translateZ(-9px);
-  }
-  
-  .h1:nth-child(8):after {
-    transform: translateZ(-10.5px);
-  }
-  
-  .h1:nth-child(9):after {
-    transform: translateZ(-12px);
-  }
-  
-  .h1:nth-child(10):after {
-    transform: translateZ(-13.5px);
-  }
-  
-  .h1:nth-child(11):after {
-    transform: translateZ(-15px);
-  }
-  
-  .h1:nth-child(12):after {
-    transform: translateZ(-16.5px);
-  }
-  
-  .h1:nth-child(13):after {
-    transform: translateZ(-18px);
-  }
-  
-  .h1:nth-child(14):after {
-    transform: translateZ(-19.5px);
-  }
-  
-  .h1:nth-child(15):after {
-    transform: translateZ(-21px);
-  }
-  
-  .h1:nth-child(16):after {
-    transform: translateZ(-22.5px);
-  }
-  
-  .h1:nth-child(17):after {
-    transform: translateZ(-24px);
-  }
-  
-  .h1:nth-child(18):after {
-    transform: translateZ(-25.5px);
-  }
-  
-  .h1:nth-child(19):after {
-    transform: translateZ(-27px);
-  }
-  
-  .h1:nth-child(20):after {
-    transform: translateZ(-28.5px);
-  }
-  
-  .h1:nth-child(n+10):after {
-    -webkit-text-stroke: 3px rgba(0, 0, 0, 0.25);
-  }
-  
-  .h1:nth-child(n+11):after {
-    -webkit-text-stroke: 15px dodgerblue;
-    text-shadow: 6px 0 6px #00366b, 5px 5px 5px #002951, 0 6px 6px #00366b;
-  }
-  
-  .h1:nth-child(n+12):after {
-    -webkit-text-stroke: 15px #0077ea;
-  }
-  
-  .h1:last-child:after {
-    -webkit-text-stroke: 17px rgba(0, 0, 0, 0.1);
-  }
-  
-  .h1:first-child:after {
-    color: #fff;
-    text-shadow: none;
-  }
-  
-  @keyframes ಠ_ಠ {
-    100% {
-      transform: rotateY(-40deg) rotateX(-43deg);
-    }
-  }
-
 
 .container {
     display:inline-flex;
     align-items:center;
-    /* justify-content:center; */
     flex-direction: row;
     text-align: center;
     padding:  40px 0px;
-    width: 240px;
-}
-.filters{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    width: 100%;
 }
 
 .box{
@@ -185,18 +66,15 @@ text-shadow: 0 0 5px rgb(206, 206, 206), 0 0 10px rgb(194, 194, 194), 0 0 15px r
 .contenedor{
     display: flex;
     width: 100%;
-    height: 20px;
-    margin: 10px;
-    /* background-color: lightblue; */
-    justify-content: space-around;
+    height: 100%;
 }
+
 h1 {
     display: inline;
 }
 
 .card{
     margin: 20px;
-    /* background-color: limegreen; */
     display: inline-block;
     width: 325px; 
     height: 300px; 
@@ -205,6 +83,20 @@ h1 {
     background-color: rgb(243, 243, 242);
     opacity: 0.9;
     -webkit-box-shadow: -11px -12px 15px 5px #000000; 
-box-shadow: -11px -12px 15px 5px #252525;
-    
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    box-shadow: -5px -6px 8px 2px #252525;
+
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.card:hover, .card:focus, .card:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  box-shadow: -11px -12px 15px 6px #252525;
 }

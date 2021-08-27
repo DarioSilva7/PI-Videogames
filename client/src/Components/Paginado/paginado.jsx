@@ -10,16 +10,15 @@ export default function Paginado({vgPerPage, allVideoGames, paginado}) {
     return (
         <nav className='nav'>
             <div className="nro">
-
-            <ul className="pagination">
-            {   pageNumber && 
-                pageNumber.map(nro=>(
-                    <li className='number' key={nro}>
-                        <a className="ancla" onClick={()=> paginado(nro)}> {nro} </a>
-                    </li>
-            ))
-            }
-            </ul>
+                <ul className="pagination">
+                {   pageNumber && 
+                    pageNumber.map(nro=>(
+                        <li className='number' key={nro}>
+                            <a className="ancla" onClick={()=> paginado(nro)}> {nro} </a>
+                        </li>
+                ))
+                }
+                </ul>
             </div>
         </nav>
     )

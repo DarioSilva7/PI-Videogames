@@ -2,17 +2,25 @@ const initialState={
     allVideogames:[],
     showVideoGames:[],
     stateGenres:[],
-    detail:[]
+    detail:[],
+    loading:false
 }
 
 function rootReducer(state= initialState, action){
     switch(action.type){
-        case 'GET_VIDEOGAMES':
-            console.log(action.payload)
+
+        case 'SET_LOADING':
             return{
                 ...state,
+                loading:true
+            }
+
+        case 'GET_VIDEOGAMES':
+            return{
+                ...state,
+                loading: false,
                 allVideogames: action.payload,
-                showVideoGames: action.payload,
+                showVideoGames: action.payload
             }
             
         case 'FILTER_BY_GENRE':
@@ -60,13 +68,22 @@ function rootReducer(state= initialState, action){
         case 'GET_BY_ID':{
             return {
                 ...state,
-                detail: action.payload
+                detail: action.payload,
+                loading: false
             }
         }
 
         case 'POST_VIDEOGAME':{
             return{ 
                 ...state,
+                loading: false,
+            }
+        }
+
+        case 'RESET_GAMES':{
+            return{ 
+                ...state,
+                detail: []
             }
         }
 

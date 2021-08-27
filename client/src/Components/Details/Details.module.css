@@ -1,11 +1,36 @@
+.container {
+    background-color: black;
+    /* display: inline-block; */
+    justify-content: center;
+}
+
+h2{
+    color: white;
+}
+
 .img{
     width: 400px;
     height: 300px;
     border-radius: 20px;
 }
+p {color: white
 
-
-.bg{
-    background-color: black;
 }
-p {color: white}
+.info{
+    display: inline-block;
+    justify-content: space-evenly;
+    
+}
+
+.loadingDet{
+    background-image: url("https://media.giphy.com/media/RN6IKwEZqbe5cOvnsA/giphy.gif?cid=ecf05e47gpjx913f9mi5w1o384meueprf63gnloavu1nmdau&rid=giphy.gif&ct=g");
+    width: 100%;
+    height: 100%;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.bg{
+    background: black;
+    width: 100%;
+    height: 100%;
+}

@@ -3,10 +3,13 @@ import {Link, useHistory} from 'react-router-dom';
 import { postGame, getGenres, getGames } from "../../Actions/index";
 import { useDispatch, useSelector } from "react-redux";
 import styles from './CreateGame.module.css'
+import Loading from "../Loading/Loading";
+import style from '../Loading/Loading.module.css'
 
 export default function VideogameCreate(params) {
     const dispatch= useDispatch()
     const generos= useSelector((state)=> state.stateGenres)
+    const loading = useSelector((state)=>state.loading)
     const thePlatforms=['PlayStation','Xbox','Nintendo','SEGA','Android','3DO','Atari','Linux','iOS','Commodore','Apple Macintosh']
 
     const [form, setForm]= useState({
@@ -50,6 +53,10 @@ export default function VideogameCreate(params) {
     }
 
     return (
+<div className={style.contenedor}>{
+    (loading)?
+    <Loading className={styles.loading} />
+    :
         <div className={styles.container}>
             <h1>CREATE YOUR VIDEOGAME 😀</h1>
             <Link to="/home"><button>HOME</button></Link>
@@ -82,8 +89,8 @@ export default function VideogameCreate(params) {
                     <input 
                     type="date"
                     id="released date"
-                    name="released_date"
-                    value={form.released_date}
+                    name="released"
+                    value={form.released}
                     onChange={e=> handleChange(e)}
                     required
                     />
@@ -162,5 +169,7 @@ export default function VideogameCreate(params) {
                 <button type="submit">CREATE!</button>
             </form>
         </div>
+    }
+</div>
     )
 }
