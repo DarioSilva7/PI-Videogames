@@ -41,4 +41,6 @@ PAGINADO
 ![image](https://user-images.githubusercontent.com/71469341/133302112-642c080b-8058-4822-a669-25412a70cd82.png)
 
 CREAR
-![image](https://user-images.githubusercontent.com/71469341/133302892-f93af5a1-fa58-4e45-8ab4-e6578fb08ec5.png)
+![image](https://user-images.githubusercontent.com/71469341/133304359-94cd6844-e90b-492e-a250-abd005c5968b.png)
+
+![image](https://user-images.githubusercontent.com/71469341/133304115-32dbf90e-2d0f-455f-9988-3ad87f17e348.png)
