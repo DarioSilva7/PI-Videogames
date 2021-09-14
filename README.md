@@ -25,3 +25,18 @@ La idea general es crear una aplicación en la cual se puedan ver los distintos 
   - Filtrarlos 
   - Ordenarlos
   - Agregar nuevos videojuegos
+
+HOME 
+![image](https://user-images.githubusercontent.com/71469341/133300777-307518c8-fcbf-4668-9e63-da1440ed5ef5.png)
+
+CARDS, linkeables al detalle.
+![card1](https://user-images.githubusercontent.com/71469341/133301454-dfbe54f1-758d-42fd-be4e-63e67918e250.png)
+
+DETALLE
+![image](https://user-images.githubusercontent.com/71469341/133302383-8a8a47b1-71ea-4ee7-9abd-c908c922501a.png)
+
+PAGINADO
+![image](https://user-images.githubusercontent.com/71469341/133302112-642c080b-8058-4822-a669-25412a70cd82.png)
+
+CREAR
+![image](https://user-images.githubusercontent.com/71469341/133302892-f93af5a1-fa58-4e45-8ab4-e6578fb08ec5.png)
