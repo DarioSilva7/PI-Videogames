@@ -33,7 +33,9 @@ CARDS, linkeables al detalle.
 ![card1](https://user-images.githubusercontent.com/71469341/133301454-dfbe54f1-758d-42fd-be4e-63e67918e250.png)
 
 DETALLE
-![image](https://user-images.githubusercontent.com/71469341/133302383-8a8a47b1-71ea-4ee7-9abd-c908c922501a.png)
+<!-- ![image](https://user-images.githubusercontent.com/71469341/133302383-8a8a47b1-71ea-4ee7-9abd-c908c922501a.png) -->
+![image](https://user-images.githubusercontent.com/71469341/133303272-01a67a9c-5c44-4df9-9083-818d226533f4.png)
+
 
 PAGINADO
 ![image](https://user-images.githubusercontent.com/71469341/133302112-642c080b-8058-4822-a669-25412a70cd82.png)
