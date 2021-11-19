@@ -28,7 +28,7 @@ function rootReducer(state= initialState, action){
             const mapeo= allGames.map(g=> {
                 return {...g, genres: g.genres.map(el=>el.name)}
             }) 
-            
+
             const filtrados= action.payload=== 'All' ? allGames : mapeo.filter(e => {
                 return e.genres.includes(action.payload)}) // filtro 
             return { 
@@ -42,14 +42,17 @@ function rootReducer(state= initialState, action){
         }
 
         case 'SORT_BY_RATING':{
-                if (action.payload === 'high') return {...state, showVideoGames: [...state.showVideoGames].sort((a, b) => a.rating > b.rating ? -1 : 1)}
-                return {...state, showVideoGames: [...state.showVideoGames].sort((a, b) => a.rating > b.rating ? 1 : -1)}
+                if (action.payload === 'high') {
+                    return {...state, showVideoGames: [...state.showVideoGames].sort((a, b) => a.rating > b.rating ? -1 : 1)}
+                }
+                else{
+                    return {...state, showVideoGames: [...state.showVideoGames].sort((a, b) => a.rating > b.rating ? 1 : -1)}}
             }
-            
+
         case 'IS_CREATED' :{
             let allGames= state.allVideogames
             var losfiltrados= action.payload === "Created" ? allGames.filter(g=> g.createdInDB): allGames.filter(g=> !g.createdInDB)
-            return action.payload === 'All' ? {...state, showVideoGames:allGames} : {...state, showVideoGames: losfiltrados}
+            return action.payload === 'All' ? {...state, showVideoGames:allGames} : {...state, showVideoGames: losfiltrados.length>0? losfiltrados : "Database empty!"}
         }
 
         case 'GET_BY_NAME':{
@@ -58,6 +61,7 @@ function rootReducer(state= initialState, action){
                 showVideoGames: action.payload
             }
         }
+
         case 'GET_GENRES':{
             return{
                 ...state,

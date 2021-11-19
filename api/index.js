@@ -23,7 +23,7 @@ const axios = require('axios');
 const {API_KEY} = process.env
 
 // Syncing all the models at once
-conn.sync({ force: false}).then(() => {
+conn.sync({ force: true}).then(() => {
   axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`).then(rta=>{
     return rta.data.results.forEach(el=> Genre.findOrCreate({
       where:{

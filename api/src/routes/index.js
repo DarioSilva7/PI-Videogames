@@ -7,48 +7,36 @@ const {Videogame , Genre, Platform, Op} = require('../db');
 
 
 const getApiGames= async ()=>{
-    const infoApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`)
+    // const infoApi = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`)
     
-    // var temp=[]
-    // for (let index = 1; index < 6; index++) { 
-    // temp.push(axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=${index}`))
-    // }
-    // const infodeapi2= await Promise.all(temp)
-
-    // console.log(infodeapi2)
-    // mapGames(infodeapi2)
-    // console.log(infodeapi2[0].data.results)
-    
-    // var arreglodeinfo=[]
-    // for (let i = 0; i < infodeapi2.length; i++) {
-    //     arreglodeinfo= [...arreglodeinfo, mapGames(infodeapi2[i].data.results) ] 
-    // }
-    // return arreglodeinfo
-
-    let gamesArray= await mapGames(infoApi.data.results)
-    // console.log(gamesArray)// 20
-    let next = infoApi.data.next
-    while (gamesArray.length < 100) {
-        const temp= await axios.get(next)
-        const carga= await mapGames(temp.data.results)
-        gamesArray= [...gamesArray,...carga]
-        next= temp.data.next
+    var temp=[]
+    for (let index = 1; index < 6; index++) { 
+        let {data}= await (axios.get(`https://api.rawg.io/api/games?key=${API_KEY}&page=${index}`))
+        temp.push(...data.results)
     }
-    // console.log(gamesArray.length)
+
+    let gamesArray= await mapGames(temp)
+
+    // let next = infoApi.data.next
+    // while (gamesArray.length < 100) {
+    //     const temp= await axios.get(next)
+    //     const carga= await mapGames(temp.data.results)
+    //     gamesArray= [...gamesArray,...carga]
+    //     next= temp.data.next
+    // }
+
     return gamesArray
 } 
 
 const mapGames  = async (arreglo)=>{
   const aux=  arreglo.map(c => {
-    //   console.log(c.parent_platforms," c. parent_platforms")
+
         return {
             id: c.id,
             name: c.name,
             img: c.background_image,
             genres: c.genres.map(g=>{return {id: g.id, name: g.name }}),
             rating: c.rating_top
-            // genres: c.genres.map(g=> g.name),
-            // platforms: c.parent_platforms.map(p=>p.name)
         }
     })
     return aux
@@ -74,34 +62,26 @@ const allGames= async()=>{
 }
 
 //--------------------------------------------------------------------
+//--------------------------------------------------------------------
 
-// Ejemplo: const authRouter = require('./auth.js');
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
 router.get('/videogames', async(req, res)=>{
     const {name}= req.query;
 
     if(name){
         const allgames= await axios.get(`https://api.rawg.io/api/games?search=${name}&key=${API_KEY}`)
-        // let byName= await allgames.data.results.filter(n=> n.name.toLowerCase().includes(name.toLowerCase()))
-        // console.log(byName)
-        // console.log(allgames.data.results,"////////////////////")
 
         let arr= allgames.data.results.map(e=>{ 
             return {
                 id: e.id,
                 name: e.name,
                 img: e.background_image,
-                // genres: e.genres.map(g=> g.length ? g.name : "none"),
                 genres: e.genres?.map(g=> g.name),
                 rating: e.rating_top,
                 platforms: e.parent_platforms.map(p=>p.platform.name)
                 }
             }
             )
-            // console.log(byName[0].parent_platforms)
-            // console.log(arr.genres, "////////////ARRRR-GENREE")
 
         let ofDB= await Videogame.findAll({
                     where:{ 
@@ -125,16 +105,9 @@ router.get('/videogames', async(req, res)=>{
             res.status(200).json(games)
         }
 })
-//-----------------------------------------------------------------------------
-//-----------------------------------------------------------------------------
 
-// GET /videogame/{idVideogame}:
-// Obtener el detalle de un videojuego en particular
-    //description
-    //releaseDate
-    //rating
-    //platforms
-    // Incluir los géneros asociados
+//-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------
 
     router.get('/videogame/:id', async(req,res)=>{
     const {id}= req.params;
@@ -149,8 +122,7 @@ router.get('/videogames', async(req, res)=>{
                 return res.status(200).send(game)
             }
             const game = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}`)
-          
-            // console.log(game.data.genres)
+
             const result = {
                 id: game.data.id,
                 name: game.data.name,
@@ -172,19 +144,18 @@ router.get('/videogames', async(req, res)=>{
 
 
 router.post('/videogames', async(req,res)=>{
-    const{img, name, description,released_date, genres, rating, platforms, createdInDB}= req.body;
-    
+    const{img, name, description,released, genres, rating, platforms, createdInDB}= req.body;
+
     try{
         const createdVideoGame = await Videogame.create({
-            img, name, description, released_date, rating, platforms,createdInDB
+            img, name, description, released, rating, platforms,createdInDB
         })
-        
+
         const generos= genres.map(async g=> {
-           const gbyGame= await Genre.findByPk(g)
+           const gbyGame= await Genre.findByPk(g[0])
            createdVideoGame.addGenres(gbyGame)
         })
-            
-     // hacer por set
+
         await Promise.all(generos)
         res.send("Successfully created videogame.")
     }
@@ -201,7 +172,6 @@ router.get('/genres', async(req,res)=>{
     try{
         const arr = await Genre.findAll()
         const generos = arr.map(el=> el.dataValues)
-        console.log(generos,"---------------GENEROS")
         res.json(generos)
     }catch(error){
         console.log(error)
@@ -209,7 +179,3 @@ router.get('/genres', async(req,res)=>{
 })
 
 module.exports = router;
-
-/*
--->LAS PLATAFORMAS EN EL FRONT, LLEGAN LLENAS DE NULL
-*/

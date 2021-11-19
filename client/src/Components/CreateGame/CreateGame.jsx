@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from './CreateGame.module.css'
 import Loading from "../Loading/Loading";
 import style from '../Loading/Loading.module.css'
+import foto from '../../videogame.png'
 
 export default function VideogameCreate(params) {
     const dispatch= useDispatch()
@@ -16,7 +17,9 @@ export default function VideogameCreate(params) {
         genres:[],
         platforms:[]
     })
+    
     const history= useHistory() 
+
     useEffect(()=>{
 
         dispatch(getGenres())
@@ -30,9 +33,13 @@ export default function VideogameCreate(params) {
         })
     }
     function handleGenres(e){
+        let v= e.target.value.split(',')
+        console.log(v)
+        v= [parseInt(v[0]),v[1]]
+        console.log(v)
         setForm({
             ...form,
-            genres: [...form.genres, e.target.value]
+            genres: [...form.genres, v]
         })
     }
 
@@ -41,7 +48,20 @@ export default function VideogameCreate(params) {
             ...form,
             platforms: [...form.platforms, e.target.value]
         })
+        
     }
+    const handleDeleteGenre = function(el){
+        setForm({
+          ...form,
+          genres: form.genres.filter(g => g !== el)
+        })
+      }
+    const handleDeletePlatform = function(el){
+        setForm({
+          ...form,
+          platforms: form.platforms.filter(p => p !== el)
+        })
+      }
 
 
     function handleSubmit(e) {
@@ -59,12 +79,12 @@ export default function VideogameCreate(params) {
     :
         <div className={styles.container}>
             <h1>CREATE YOUR VIDEOGAME 😀</h1>
-            <Link to="/home"><button>HOME</button></Link>
-           
-            <form onSubmit={e=> handleSubmit(e)}>
+            <Link to="/home"><button className={styles.btn}>HOME</button></Link>
+           <div>
+            <form autoComplete='off' className={styles.createForm} onSubmit={e=> handleSubmit(e)}>
             
                     <label htmlFor="name">Name:</label>
-                    <input 
+                    <input className={styles.input}
                     type="text"
                     id="name"
                     name="name"
@@ -74,19 +94,19 @@ export default function VideogameCreate(params) {
                     />
             
                     <label htmlFor="description">Description:</label>
-                    <textarea 
+                    <textarea className={styles.input}
                     type="textarea"
                     id="description"
                     name="description"
                     value={form.description}
                     onChange={handleChange}
                     required
-                    maxLength="150"
+                    maxLength="1000"
                     rows="5"
                     />
                     
                     <label htmlFor="released date">Released date:</label>
-                    <input 
+                    <input className={styles.input}
                     type="date"
                     id="released date"
                     name="released"
@@ -95,54 +115,66 @@ export default function VideogameCreate(params) {
                     required
                     />
 
-                    <label>Rating:</label>
-
+                    <label className={styles.rating}>Rating:
                     <input onChange={e=> handleChange(e)}
-                    type="checkbox"
+                    type="radio"
                     name="rating"
                     value="1"
                     />1
                     
                     <input onChange={e=> handleChange(e)}
-                    type="checkbox"
+                    type="radio"
                     name="rating"
                     value="2"
                     />2
 
                     <input onChange={e=> handleChange(e)}
-                    type="checkbox"
+                    type="radio"
                     name="rating"
                     value="3"
                     />3
 
                     <input onChange={e=> handleChange(e)}
-                    type="checkbox"
+                    type="radio"
                     name="rating"
                     value="4"
                     />4
 
                     <input onChange={e=> handleChange(e)}
-                    type="checkbox"
+                    type="radio"
                     name="rating"
                     value="5"
                     />5
+                    </label>
+
                 
                     <label htmlFor="genres">Genres:
-                        <select onChange={e=> handleGenres(e)} id="genres" name="genres" defaultValue="" required>
+                        <select className={styles.input} onChange={e=> handleGenres(e)} id="genres" name="genres" defaultValue="" required>
                             <option name="genres" value="">- - - - -</option>
                             {
                                 generos?.map(g=>(
-                                    <option value={parseInt(g.id)}> {g.name}</option>
+                                    <option value={[g.id, g.name]}> {g.name}</option>
                                     ))
                             }
                         </select>
+  
                     <ul>
-                        <li>{form.generos?.map(el=> el + " - ")}</li>
+                        <li>{
+                        form.genres?.map(el=> {
+                            return (
+                             <div key={el}>
+                                {el[1]} 
+                                <button name={el} type='button' onClick={() => handleDeleteGenre(el)} > X </button>
+                            </div>
+                            )}
+                        )}
+                        </li>
                     </ul>
+                    
                     </label>
 
                     <label htmlFor="platforms" >Platforms:
-                        <select onChange={e=> handlePlatforms(e)} id="platforms" name="platforms" defaultValue="" required>
+                        <select className={styles.input} onChange={e=> handlePlatforms(e)} id="platforms" name="platforms" defaultValue="" required>
                             <option name="platforms" value="">- - - - -</option>
                             {
                                 thePlatforms?.map(p=>(
@@ -150,24 +182,46 @@ export default function VideogameCreate(params) {
                                     ))
                             }
                         </select>
+
                     <ul>
-                        <li>{form.platforms?.map(el=> el + " - ")}</li>
+                        <li>{
+                        form.platforms?.map(el=> {
+                            return (
+                             <div key={el}>
+                                {el} 
+                                <button name={el} type='button' onClick={() => handleDeletePlatform(el)} > X </button>
+                            </div>
+                            )}
+                        )}
+                        </li>
                     </ul>
                     </label>
 
                     
                 
-                    <label htmlFor="image">Image:</label>
-                    <input 
+                    <label htmlFor="image">Image:
+                    <input className={styles.input}
                     type="text"
                     name="img"
                     id="image"
                     onChange={handleChange}
                     value={form.img}
+                    placeholder="Mario"
                     />
-
-                <button type="submit">CREATE!</button>
+                    {
+                        form.img?
+                        <img className={styles.img} src={form.img} alt="" />
+                        :
+                        
+                        <img className={styles.img} src={foto} alt="" />
+                        
+                    }
+                    
+                    </label>
+                <button className={styles.btnCreate} type="submit">CREATE!</button>
             </form>
+            </div>
+
         </div>
     }
 </div>
