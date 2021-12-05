@@ -1,0 +1,206 @@
+@import url("//fonts.googleapis.com/css?family=Pacifico&text=Pure");
+@import url("//fonts.googleapis.com/css?family=Roboto:700&text=css");
+@import url("//fonts.googleapis.com/css?family=Kaushan+Script&text=!");
+
+h1{
+  color:white;
+  display: inline;
+}
+
+.contenedor{
+  width: 100%;
+  height: auto;
+}
+
+.loading{
+  background-image: url("https://64.media.tumblr.com/tumblr_m9ck6ebiGl1qi2riwo1_500.gifv");
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.body{
+  height: 100%;
+  width: 100%;
+}
+
+.fondo{
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/91188f4a-d4d3-4f33-af28-2be841b04cf0/d4an1tk-2b341f5c-ada5-4a0f-9c3d-03659cd6f8fb.jpg/v1/fill/w_1024,h_576,q_75,strp/vive_en_estado_play__ps_mexico_by_nonalizhus_d4an1tk-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvOTExODhmNGEtZDRkMy00ZjMzLWFmMjgtMmJlODQxYjA0Y2YwXC9kNGFuMXRrLTJiMzQxZjVjLWFkYTUtNGEwZi05YzNkLTAzNjU5Y2Q2ZjhmYi5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.pzTeWg8ngSQyyWpI6hlB62icbnFs1Z40eBNZyILWqzc");
+  height: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: top;
+  background-position-y: -4rem;
+}
+
+.filters{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+.body2{
+background-color: black;
+  height: auto;
+  width: 100%;
+}
+
+.card{
+  margin: 20px;
+  display: inline-block;
+  width: 325px; 
+  height: 300px; 
+  border: 3px solid rgb(44, 44, 44);
+  border-radius: 10%;
+  background-color: rgb(243, 243, 242);
+  opacity: 0.9;
+  -webkit-box-shadow: -11px -12px 15px 5px #000000; 
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: -5px -6px 8px 2px #252525;
+
+vertical-align: middle;
+-webkit-transform: perspective(1px) translateZ(0);
+transform: perspective(1px) translateZ(0);
+
+-webkit-transition-duration: 0.3s;
+transition-duration: 0.3s;
+-webkit-transition-property: transform;
+transition-property: transform;
+}
+.card:hover, .card:focus, .card:active {
+-webkit-transform: scale(1.1);
+transform: scale(1.1);
+box-shadow: -11px -12px 15px 6px #252525;
+}
+
+#btn_create{
+  border: 1px solid yellowgreen ;
+}
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,700);
+:root {
+  background: black;
+  height: 100vh;
+}
+
+.container {
+  width: 334px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-align: center;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+body
+{
+  background:#333;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+h1, h2 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 14px;
+  margin-bottom: 30px;
+  color: #24E2B8;
+}
+
+.reload{
+  padding: 5px;
+  border-radius: 12px;
+}
+.input{
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.one{
+  border: none;
+  border-radius: 4px;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.48);
+  overflow: hidden;
+  padding: 2px 5px 2px 7px;
+  /* margin-bottom: 20px; */
+  font-size: 20px;
+  position: relative;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  -webkit-transition: background-position .7s,box-shadow .4s;
+  transition: background-position .7s,box-shadow .4s;
+  background-size: 110%;
+  font-family: 'Oswald', sans-serif;
+}
+.one:hover {
+  background-position: 0% 30%;
+}
+.one:hover:after {
+  right: -40px;
+  -webkit-transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,-webkit-transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear;
+  transition: right .4s,transform 30s .2s linear,-webkit-transform 30s .2s linear;
+}
+.one:before{
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+}
+.one:before{
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  font-size: 30px;
+  left: 25px;
+  top: 19px;
+}
+.one:after{
+  -webkit-transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, -webkit-transform .2s;
+  transition: right .4s, transform .2s;
+  transition: right .4s, transform .2s, -webkit-transform .2s;
+  font-size: 100px;
+  opacity: .3;
+  right: -120px;
+  top: -17px;
+}
+
+.one {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 10px 0px #782CDA;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#782CDA), to(rgba(126, 94, 162, 0.51))), url("http://gearnuke.com/wp-content/uploads/2015/11/1280x720-cuU.jpg");
+  background-image: linear-gradient(to bottom, #782CDA, rgba(126, 94, 162, 0.51)), url("http://gearnuke.com/wp-content/uploads/2015/11/1280x720-cuU.jpg");
+  padding: 10px;
+}
+.one:hover {
+  box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #782CDA;
+}
+.one:hover:after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.one:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.one b {
+  color: #DDA6FF;
+  font-weight: 700;
+}
