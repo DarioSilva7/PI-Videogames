@@ -138,7 +138,7 @@ export default function Home() {
                 Reload videogames
               </button>
 
-              <Link to="/videogames">
+              <Link to="/videogame/create">
                 <button className={styles.one}>
                   <b>Create Videogame</b>
                 </button>

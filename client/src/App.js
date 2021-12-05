@@ -15,7 +15,7 @@ function App() {
       {/* El Switch, se queda con lo ultimo que se ingreso correctamente en el url */}
         <Route exact path= "/" component= {LandingPage}/>
         <Route exact path= "/home" component= {Home}/>
-        <Route exact path= "/videogames" component= {CreateGame}/>
+        <Route exact path= "/videogame/create" component= {CreateGame}/>
         <Route exact path= "/videogame/:id" component={Details}/>
       </Switch>
     </div>

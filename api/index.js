@@ -23,26 +23,15 @@ const axios = require('axios');
 const {API_KEY} = process.env
 
 // Syncing all the models at once
-conn.sync({ force: true}).then(() => {
+conn.sync({ force: false}).then(() => {
   axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`).then(rta=>{
     return rta.data.results.forEach(el=> Genre.findOrCreate({
       where:{
         id:el.id,
-        name: el.name}}
+        name: el.name}} 
     ))
   })
-    
-  // Plataformas
-  //   axios.get(`https://api.rawg.io/api/platforms/parents?key=${API_KEY}`).then(rta=>{
-  //   return rta.data.results.forEach(e=> Platform.findOrCreate({
-  //     where:{
-  //       id: e.id,
-  //       name: e.name
-  //     }
-  //     }))
-  // }); 
-  
-  server.listen(process.env.PORT, () => {
+  server.listen(3001, () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
   })
 }); 
