@@ -124,6 +124,7 @@ h2 {
 }
 
 .reload{
+  cursor: pointer;
   padding: 5px;
   border-radius: 12px;
 }

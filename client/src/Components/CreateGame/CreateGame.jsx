@@ -34,9 +34,8 @@ export default function VideogameCreate(params) {
     }
     function handleGenres(e){
         let v= e.target.value.split(',')
-        console.log(v)
         v= [parseInt(v[0]),v[1]]
-        console.log(v)
+        console.log(v,"esto es v")
         setForm({
             ...form,
             genres: [...form.genres, v]

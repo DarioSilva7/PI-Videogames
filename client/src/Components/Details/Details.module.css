@@ -41,6 +41,7 @@ h2{
 }
 
 .btn{
+    cursor: pointer;
     padding:5px;
     border-radius: 12px;
 }

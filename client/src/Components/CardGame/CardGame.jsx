@@ -5,6 +5,7 @@ import foto from '../../videogame.png'
 
 export default function CardGame({name, image, genre, id}) {
 
+    console.log(genre,"<=== Genre")
     return(
         <div className={styles.divcard}>
 
@@ -14,7 +15,7 @@ export default function CardGame({name, image, genre, id}) {
             </Link>
              { typeof genre[0] === 'object' ? 
              genre.map(g=> <h5 className={styles.genre} >  {g.name}</h5>):
-             genre.map(g=> <h5 className={styles.genre} >{g + " - "}</h5>) }
+             genre.map(g=> <h5 className={styles.genre} >{g[1] + " - "}</h5>) }
         </div>
 
     );

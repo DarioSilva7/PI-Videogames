@@ -96,6 +96,7 @@ export function getGenres(){
 }
 
 export function postGame(payload){
+    console.log(payload,"<---- el obj form")
     return async function(dispatch){
         const response= await axios.post('http://localhost:3001/videogames/create', payload)
         return response

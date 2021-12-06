@@ -27,7 +27,7 @@ function rootReducer(state= initialState, action){
             let allGames= state.allVideogames
             const mapeo= allGames.map(g=> {
                 return {...g, genres: g.genres.map(el=>el.name)}
-            }) 
+            })
             
             const filtrados= action.payload=== 'All' ? allGames : mapeo.filter(e => {
                 return e.genres.includes(action.payload)}) // filtro 

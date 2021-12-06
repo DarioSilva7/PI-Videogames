@@ -9,7 +9,7 @@ exports.createGame = async(req,res)=>{
         })
         
         const generos= genres.map(async g=> {
-           const gbyGame= await Genre.findByPk(g)
+           const gbyGame= await Genre.findByPk(g[0])
            createdVideoGame.addGenres(gbyGame)
         })
             
