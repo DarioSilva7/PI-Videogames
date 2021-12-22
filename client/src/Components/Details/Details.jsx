@@ -12,7 +12,7 @@ export default function GetDetails(props) {
     useEffect(()=>{
         dispatch(setLoading())
         dispatch(getdetalle(props.match.params.id))
-        console.log(props)
+        console.log(props,"<=== LAS PROPS")
            // eslint-disable-next-line react-hooks/exhaustive-deps
     },[dispatch])
 
