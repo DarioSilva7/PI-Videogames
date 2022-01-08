@@ -45,7 +45,7 @@ PAGINADO
 
 CREAR
 <!-- ![image](https://user-images.githubusercontent.com/71469341/133304359-94cd6844-e90b-492e-a250-abd005c5968b.png) -->
-<!-- ![image](https://user-images.githubusercontent.com/71469341/148656997-df247dd0-1f8f-4d14-aca9-fe30c96cdec4.png) -->
+![image](https://user-images.githubusercontent.com/71469341/148656997-df247dd0-1f8f-4d14-aca9-fe30c96cdec4.png)
 ![image](https://user-images.githubusercontent.com/71469341/148657273-18be6ff7-3732-48d9-a80c-85d98e0a01b9.png)
 
 <!-- ![image](https://user-images.githubusercontent.com/71469341/133304115-32dbf90e-2d0f-455f-9988-3ad87f17e348.png) -->
