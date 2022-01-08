@@ -30,17 +30,25 @@ HOME
 ![image](https://user-images.githubusercontent.com/71469341/133300777-307518c8-fcbf-4668-9e63-da1440ed5ef5.png)
 
 CARDS, linkeables al detalle.
-![card1](https://user-images.githubusercontent.com/71469341/133301454-dfbe54f1-758d-42fd-be4e-63e67918e250.png)
+![image](https://user-images.githubusercontent.com/71469341/148656625-d4ff5bba-e89c-469f-9621-944314b08b49.png)
 
 DETALLE
 <!-- ![image](https://user-images.githubusercontent.com/71469341/133302383-8a8a47b1-71ea-4ee7-9abd-c908c922501a.png) -->
-![image](https://user-images.githubusercontent.com/71469341/133303272-01a67a9c-5c44-4df9-9083-818d226533f4.png)
-
+<!-- ![image](https://user-images.githubusercontent.com/71469341/133303272-01a67a9c-5c44-4df9-9083-818d226533f4.png) -->
+![image](https://user-images.githubusercontent.com/71469341/148656656-05b3d50e-9977-4423-8652-84fee34e8bc3.png)
 
 PAGINADO
-![image](https://user-images.githubusercontent.com/71469341/133302112-642c080b-8058-4822-a669-25412a70cd82.png)
+<!-- ![image](https://user-images.githubusercontent.com/71469341/133302112-642c080b-8058-4822-a669-25412a70cd82.png) -->
+<!-- ![image](https://user-images.githubusercontent.com/71469341/148656705-494d0a96-c9c9-4d84-9213-6d8c1bfb0fbd.png) -->
+![image](https://user-images.githubusercontent.com/71469341/148656750-283b131f-244d-443e-a5bb-d5a4f8632238.png)
+
 
 CREAR
-![image](https://user-images.githubusercontent.com/71469341/133304359-94cd6844-e90b-492e-a250-abd005c5968b.png)
+<!-- ![image](https://user-images.githubusercontent.com/71469341/133304359-94cd6844-e90b-492e-a250-abd005c5968b.png) -->
+<!-- ![image](https://user-images.githubusercontent.com/71469341/148656997-df247dd0-1f8f-4d14-aca9-fe30c96cdec4.png) -->
+![image](https://user-images.githubusercontent.com/71469341/148657273-18be6ff7-3732-48d9-a80c-85d98e0a01b9.png)
 
-![image](https://user-images.githubusercontent.com/71469341/133304115-32dbf90e-2d0f-455f-9988-3ad87f17e348.png)
+<!-- ![image](https://user-images.githubusercontent.com/71469341/133304115-32dbf90e-2d0f-455f-9988-3ad87f17e348.png) -->
+![image](https://user-images.githubusercontent.com/71469341/148657318-1ff126f3-8796-44b4-86fd-6b153d9c7266.png)
+![image](https://user-images.githubusercontent.com/71469341/148657298-3e090399-fdf6-4128-9f47-eb4b54d5a358.png)
+
