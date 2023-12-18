@@ -1,0 +1,106 @@
+.container {
+    /* color: white; */
+    /* display: block; */
+    /* flex-direction: ; */
+    /* flex-direction: column; */
+    height: 100vh;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/371/025/non_2x/neon-game-controller-or-joystick-for-game-console-on-dark-background-vector.jpg");
+}
+
+.container h1 {
+    /* color:black; */
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 10px;
+    padding: 10px;
+}
+
+.input {
+    border-radius: 20px;
+    text-indent: .7rem;
+    color: black;
+}
+
+.createForm>* {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5%;
+    width: 40%;
+    box-sizing: border-box;
+    justify-content: center;
+    text-align: left;
+}
+
+.rating {
+    display: flex;
+    padding: 8px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    /* align-content: flex-start; */
+}
+
+.img {
+    display: block;
+    /* flex-direction: column;  */
+    width: 300px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    padding: 10px 25px;
+    background-color: rgb(24, 18, 18);
+    border-radius: 30%;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 2px rgba(104, 43, 43, 0.16) inset, 0px 0px 10px 0px white;
+    -webkit-transition: background-position .7s, box-shadow .4s;
+    transition: background-position .7s, box-shadow .4s;
+    color: white;
+}
+
+.btn:hover {
+    /* height: 5%; */
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #dab12c;
+    color: white;
+}
+
+.btn1 {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.btnCreate {
+    display: inline-flex;
+    border-radius: 30%;
+    overflow: hidden;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    -webkit-transition: background-position .7s, box-shadow .4s;
+    transition: background-position .7s, box-shadow .4s;
+    font-family: 'Oswald', sans-serif;
+    box-shadow: 0px 0px 0px 2px rgba(104, 43, 43, 0.16) inset, 0px 0px 10px 0px white;
+    padding: 10px;
+    background-color: rgb(24, 18, 18);
+}
+
+.btnCreate:hover {
+    background-position: 0% 30%;
+    height: 5%;
+    box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.16) inset, 0px 0px 30px 0px #dab12c;
+    color: white;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: initial;
+}
+
+ul li {
+    display: inline-flex;
+}

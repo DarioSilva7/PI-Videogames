@@ -1,0 +1,38 @@
+.imgcard{
+    display: inline-block;
+    width: 300px; 
+    height: 200px;
+    border: 3px solid #555;
+    border-radius: 20%;
+    background-color: black;
+    opacity: 0.85;
+    -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+    box-shadow: 5px 5px 15px 5px #000000;
+    justify-self: center;
+    align-self: center;
+    margin: 2%;
+}
+.h3card{
+    text-decoration: none;
+    color:white;
+    margin-block: auto;
+    padding: 2px;
+    font-size: 1rem;
+    text-align: center;
+}
+.genre{
+    display: inline-block;
+    margin-top: -20px;
+    color: black;
+    text-decoration: none;
+    border: thin solid transparent;
+    padding: 2px;
+}
+
+.divcard{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    display: "flex";
+    flex-direction: "column"
+}

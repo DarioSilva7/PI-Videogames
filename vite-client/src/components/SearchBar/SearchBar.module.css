@@ -1,0 +1,13 @@
+.contenedor{
+    justify-content: center;
+    align-content: flex-end;
+}
+.input{
+    padding: 5px;
+    border-radius: 4px;
+  }
+
+.btn{
+    cursor: pointer;
+    color: white
+}
